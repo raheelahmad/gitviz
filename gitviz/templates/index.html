@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block head_block %} {% endblock %} {% block body %}
+<div class="page">
+    <div id="header">
+        <span class="page-title">Repo</span><span class="page-title-emphasis">explorer</span>
+        <span class="page-subtitle">a view into the git timeline |
+            <a href="http://sakunlabs.com/blog/post/repo-explorer">Blog Post →</a>
+        </span>
+    </div>
+    <div id="controls">
+        <div class="direction">Choose a repository</div>
+        <div id="repos">
+            <ul>
+                {% for repo in repos %}
+                <li>
+                    <a href="/repoexplorer?set_repo={{repo.name}}" class="{{'selected' if repo.selected else ' '}}">{{repo.name}}</a>                    {{ "・" if repos.index(repo)
+                    < repos|length-1 else "" }} </li>
+                        {% endfor %}
+            </ul>
+        </div>
+        <div id="reload">
+            <span></span>
+        </div>
+        <div class="direction">View as</div>
+        <div id="top-nav">
+            <ul>
+                <li id="selected-viz" class="first"> <a href="#" name="commits">Authors</a> </li>
+                <li> <a href="#" name="files">Files</a> </li>
+            </ul>
+        </div>
+    </div>
+    <div id="viz">
+    </div>
+    <script type="text/javascript" src={{ url_for( 'static', filename='bundle.js' ) }}></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-85441404-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    {% endblock %}

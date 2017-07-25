@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, "Helvetica", sans-serif;
+  background-color: #252830;
+  color: #E1D1DE; }
+
+.page {
+  width: 1400px;
+  margin: 0 auto; }
+
+#viz {
+  margin-top: 10px; }
+
+text {
+  fill: #99A; }
+
+#reload {
+  font-size: 10px;
+  margin-bottom: 10px; }
+
+a {
+  color: #B18AE0;
+  text-decoration: none; }
+
+/* --- Nav --- */
+/* - Header - */
+#header {
+  margin-top: 20px; }
+  #header .page-title {
+    font-family: 'Bodoni MT', Didot, Garamond;
+    font-size: 36px;
+    text-transform: uppercase; }
+  #header .page-title-emphasis {
+    font-family: 'Bodoni MT', Didot, Garamond;
+    font-size: 26px;
+    font-style: italic;
+    margin-left: 4px; }
+  #header .page-subtitle {
+    font-family: 'Bodoni MT', Didot, Garamond;
+    font-size: 12px;
+    margin-left: 6px; }
+  #header .blog-link {
+    font-family: 'Bodoni MT', Didot, Garamond;
+    font-style: italic; }
+
+/* - Controls - */
+#controls {
+  margin-top: 20px;
+  /* margin-left: 30px; */ }
+  #controls text.selectedDescription {
+    /* "What day of the week ..." */
+    display: block;
+    font-size: 10px;
+    font-style: italic; }
+
+ul {
+  display: inline-block; }
+
+li {
+  display: inline; }
+
+.direction {
+  margin-top: 18px;
+  font-size: 10px;
+  font-weight: 200;
+  font-style: italic; }
+
+#repos {
+  width: 800px; }
+  #repos li {
+    font-size: 13px; }
+    #repos li .selected {
+      color: #E1D1DE;
+      font-variant: small-caps; }
+
+#top-nav {
+  font-size: 20px; }
+  #top-nav li {
+    float: left;
+    padding-right: 6px; }
+  #top-nav li#selected-viz a {
+    font-variant: small-caps;
+    color: #E1D1DE; }
+  #top-nav ul li:before {
+    content: "/"; }
+  #top-nav ul li.first:before {
+    content: " "; }
+
+#sub-nav ul {
+  font-size: 14px; }
+
+#sub-nav li {
+  display: inline;
+  float: left;
+  padding-right: 10px; }
+
+/* - Sub-viz selection (timeline/hourly/...) - */
+li#selected-view a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #E1D1DE;
+  font-variant: small-caps; }
+
+#viz {
+  margin-top: 20px; }
+
+/* -- Timeline -- */
+.authors circle {
+  fill: none; }
+
+.authors text {
+  font-size: 11px; }
+
+.authors rect {
+  /* horizontal author or file line */
+  fill: #333; }
+
+.authors .commits-count {
+  fill: #667;
+  font-size: 10px; }
+
+.tick line {
+  stroke: #999; }
+
+.tick text {
+  fill: #999; }
+
+path.domain {
+  stroke: none; }
+
+rect.insertion {
+  fill: #B18AE0; }
+
+rect.deletion {
+  fill: #E75153; }
+
+rect#mouseover {
+  pointer-events: all; }
+
+.author-hover rect {
+  fill: #446;
+  /* for the horizontal author line */ }
+
+rect.mouseover-background {
+  stroke: #999;
+  stroke-width: 0.5;
+  fill: #AAC;
+  fill-opacity: 0.9; }
+
+rect#hover-vertical-marker {
+  fill: #AAA; }
+
+text.hover-commit-message {
+  fill: #333;
+  font-size: 11px; }
+
+text.hover-commit-insertion-deletion {
+  fill: #338;
+  font-size: 10px; }
+
+text.hover-commit-time {
+  fill: #338;
+  font-size: 10px; }
+
+.rhythmInner rect {
+  fill: #CCC;
+  stroke-width: 0.5; }
+
+.rhythmHourHover rect {
+  /* fill: #BBB; */ }
+
+.rhythmInner text {
+  fill: none;
+  text-anchor: middle;
+  font-size: 9px;
+  font-style: oblique;
+  font-family: Futura; }
+
+.rhythmHourHover text {
+  fill: #999; }
+
+.files circle {
+  fill: none; }
+
+.files text {
+  font-size: 11px; }
+
+.files rect {
+  /* horizontal author or file line */
+  fill: #333; }
+
+.files .commits-count {
+  fill: #667;
+  font-size: 10px; }
+
+.commit.hide {
+  fill-opacity: 0.3; }
+
+.files.hide {
+  fill-opacity: 0.3; }
+
+.top-authors {
+  font-size: 12px;
+  text-anchor: middle; }
+
+.top-authors.hide {
+  fill-opacity: 0.3; }
+
+.commit.hide {
+  fill-opacity: 0.0; }

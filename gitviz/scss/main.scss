@@ -1,0 +1,283 @@
+$primary-text-color: #E1D1DE;
+$primary-link-color: #B18AE0;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, "Helvetica", sans-serif;
+    background-color: #252830;
+    color: $primary-text-color;
+}
+
+.page {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+#viz {
+    margin-top: 10px;
+}
+
+text {
+    fill: #99A;
+}
+
+#reload {
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: $primary-link-color;
+    text-decoration: none;
+}
+
+/* --- Nav --- */
+
+/* - Header - */
+
+@mixin title-font {
+    font-family: 'Bodoni MT', Didot, Garamond;
+}
+
+
+#header {
+    margin-top: 20px;
+
+    .page-title {
+        @include title-font;
+        font-size: 36px;
+        text-transform: uppercase;
+    }
+
+    .page-title-emphasis {
+        @include title-font;
+        font-size: 26px;
+        font-style: italic;
+        margin-left: 4px;
+    }
+
+    .page-subtitle {
+        @include title-font;
+        font-size: 12px;
+        margin-left: 6px;
+    }
+
+    .blog-link {
+        @include title-font;
+        font-style: italic;
+    }
+
+}
+
+/* - Controls - */
+
+#controls {
+    margin-top: 20px;
+    /* margin-left: 30px; */
+    text.selectedDescription { /* "What day of the week ..." */
+        display: block;
+        font-size: 10px;
+        font-style: italic;
+    }
+}
+
+ul {
+    display: inline-block;
+}
+li {
+    display: inline;
+}
+
+.direction {
+    margin-top: 18px;
+    font-size: 10px;
+    font-weight: 200;
+    font-style: italic;
+}
+
+#repos {
+    width: 800px;
+    li {
+        font-size: 13px;
+        // padding-right: 13px;
+        .selected {
+            color: $primary-text-color;
+            font-variant: small-caps;
+        }
+    }
+}
+
+#top-nav {
+    font-size: 20px;
+    li {
+        float: left;
+        padding-right: 6px;
+    }
+    li#selected-viz a {
+        font-variant: small-caps;
+        color: $primary-text-color;
+    }
+
+    ul {
+        li:before {
+            content: "/";
+        }
+        li.first:before {
+            content: " ";
+        }
+    }
+}
+
+
+#sub-nav {
+    ul {
+        font-size: 14px;
+    }
+    li {
+        display: inline;
+        float: left;
+        padding-right: 10px;
+    }
+}
+
+/* - Sub-viz selection (timeline/hourly/...) - */
+li#selected-view a {
+    text-decoration: none;
+    font-weight: 700;
+    color: $primary-text-color;
+    font-variant: small-caps;
+}
+
+#viz {
+    margin-top: 20px;
+}
+
+/* -- Timeline -- */
+
+@mixin yDomain {
+    circle {
+        fill: none;
+    }
+    text {
+        font-size: 11px;
+    }
+    rect {
+        /* horizontal author or file line */
+        fill: #333;
+    }
+    .commits-count {
+        fill: #667;
+        font-size: 10px;
+    }
+}
+
+.authors {
+    @include yDomain
+}
+
+.tick {
+    line {
+        stroke: #999;
+    }
+    text {
+        fill: #999;
+    }
+}
+
+path.domain {
+    stroke: none;
+}
+
+rect.insertion {
+    fill: #B18AE0;
+}
+rect.deletion {
+    fill: #E75153;
+}
+
+rect#mouseover {
+    pointer-events: all;
+}
+
+.author-hover rect {
+    fill: #446; /* for the horizontal author line */
+}
+
+rect.mouseover-background {
+    stroke: #999;
+    stroke-width: 0.5;
+    fill: #AAC;
+    fill-opacity: 0.9;
+}
+
+rect#hover-vertical-marker  {
+    fill: #AAA;
+}
+
+text.hover-commit-message {
+    fill: #333;
+    font-size: 11px;
+}
+text.hover-commit-insertion-deletion {
+    fill: #338;
+    font-size: 10px;
+}
+text.hover-commit-time {
+    fill: #338;
+    font-size: 10px;
+}
+
+.rhythmInner rect {
+    fill: #CCC;
+    stroke-width: 0.5;
+}
+
+.rhythmHourHover rect {
+    /* fill: #BBB; */
+}
+
+.rhythmInner text {
+    fill: none;
+    text-anchor: middle;
+    font-size: 9px;
+    font-style: oblique;
+    font-family: Futura;
+}
+
+.rhythmHourHover text {
+    fill: #999;
+}
+
+// -- Files --
+
+.files {
+    @include yDomain
+}
+
+.commit.hide {
+    fill-opacity: 0.3;
+}
+
+.files.hide {
+    fill-opacity: 0.3;
+}
+
+// -- Top Authors --
+
+.top-authors {
+    font-size: 12px;
+    text-anchor: middle;
+}
+
+.top-authors.hide {
+    fill-opacity: 0.3;
+}
+
+.commit.hide {
+    fill-opacity: 0.0;
+}

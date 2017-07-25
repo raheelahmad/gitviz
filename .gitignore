@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+*.log
+node_modules/
+.tern-port
+bundle.js
+.vscode
