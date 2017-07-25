@@ -2,10 +2,13 @@
 
 Visualizes git repositories as timelines.
 
+See it live [here](http://sakunlabs.com/repoexplorer) and [this](http://sakunlabs.com/blog/post/repo-explorer/) blog post.
+
 ### Set up the environment
 
 - Install front-end dependencies: `npm install`
-- Install backend dependencies (assuming you have `virtualenv` installed):
+- Install backend dependencies (assuming you have `virtualenv` with 3.6 installed):
+    - `virtualenv venv`
     - `source venv/bin/activate`
     - `pip install -r requirements.txt`
 
@@ -13,6 +16,7 @@ Visualizes git repositories as timelines.
 
 - Run webpack: `webpack --progress --watch` (compiles JavaScript & CSS)
 - Separately, run the webserver: `python run.py`
+- Then navigate to [http://127.0.0.1:5000/repoexplorer](http://127.0.0.1:5000/repoexplorer)
 
 ### Importing a repository
 
