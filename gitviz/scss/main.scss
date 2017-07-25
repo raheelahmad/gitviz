@@ -63,7 +63,7 @@ a {
 
     .page-subtitle {
         @include title-font;
-        font-size: 12px;
+        font-size: 15px;
         margin-left: 6px;
     }
 
@@ -77,11 +77,11 @@ a {
 /* - Controls - */
 
 #controls {
-    margin-top: 20px;
+    margin-top: 10px;
     /* margin-left: 30px; */
     text.selectedDescription { /* "What day of the week ..." */
         display: block;
-        font-size: 10px;
+        font-size: 12px;
         font-style: italic;
     }
 }
@@ -95,7 +95,7 @@ li {
 
 .direction {
     margin-top: 18px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 200;
     font-style: italic;
 }
@@ -154,7 +154,7 @@ li#selected-view a {
 }
 
 #viz {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* -- Timeline -- */

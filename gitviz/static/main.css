@@ -41,7 +41,7 @@ a {
     margin-left: 4px; }
   #header .page-subtitle {
     font-family: 'Bodoni MT', Didot, Garamond;
-    font-size: 12px;
+    font-size: 15px;
     margin-left: 6px; }
   #header .blog-link {
     font-family: 'Bodoni MT', Didot, Garamond;
@@ -49,12 +49,12 @@ a {
 
 /* - Controls - */
 #controls {
-  margin-top: 20px;
+  margin-top: 10px;
   /* margin-left: 30px; */ }
   #controls text.selectedDescription {
     /* "What day of the week ..." */
     display: block;
-    font-size: 10px;
+    font-size: 12px;
     font-style: italic; }
 
 ul {
@@ -65,7 +65,7 @@ li {
 
 .direction {
   margin-top: 18px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 200;
   font-style: italic; }
 
@@ -106,7 +106,7 @@ li#selected-view a {
   font-variant: small-caps; }
 
 #viz {
-  margin-top: 20px; }
+  margin-top: 10px; }
 
 /* -- Timeline -- */
 .authors circle {
